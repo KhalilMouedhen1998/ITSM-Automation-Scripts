@@ -79,8 +79,8 @@ def is_weekend(dt):
 
 def assign_ticket(ticket_id, technician):
     """Assigne le ticket au technicien via l'API"""
-    url = f"https://10.10.30.75/api/v3/requests/{ticket_id}/assign"
-    headers = {"authtoken": "0C865686-02A7-45EE-B13A-8C22A1066429"}
+    url = f"/api/v3/requests/{ticket_id}/assign"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     
     input_data = f'''{{
         "request": {{
