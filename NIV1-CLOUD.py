@@ -6,8 +6,8 @@ import subprocess
 import re
 
 # Configuration
-API_URL = "https://10.10.30.75/api/v3/requests"
-API_TOKEN = "0C865686-02A7-45EE-B13A-8C22A1066429"
+API_URL = "/api/v3/requests"
+API_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 EXCEL_FILE_PATH = r"Procédure d'affectation des tickets 2025.xlsx"
 
 def get_tech_with_least_tickets():
