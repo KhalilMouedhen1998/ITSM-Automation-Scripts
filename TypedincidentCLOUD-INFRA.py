@@ -2,8 +2,8 @@ import requests
 from fuzzywuzzy import fuzz
 
 # URL et headers de l'API pour récupérer les tickets
-url = "https://10.10.30.75/api/v3/requests"
-headers = {"authtoken": "0C865686-02A7-45EE-B13A-8C22A1066429"}
+url = "/api/v3/requests"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 input_data = '''{
     "list_info": {
         "row_count": 1,
@@ -38,7 +38,7 @@ def detect_incident_type(ticket):
 
 # Fonction pour mettre à jour le ticket avec le type d'incident
 def update_ticket(ticket_id, incident_type):
-    url_update = f"https://10.10.30.75/api/v3/requests/{ticket_id}"
+    url_update = f"/api/v3/requests/{ticket_id}"
     input_data_update = f'''{{
         "request": {{
             "udf_fields": {{
