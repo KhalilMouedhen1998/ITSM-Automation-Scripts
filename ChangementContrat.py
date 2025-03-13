@@ -153,7 +153,7 @@ class ContractChangeMonitor:
                 Cordialement,<br>
                 Système de Monitoring des Contrats
                 """,
-                "to": [{"email_id": "ghada.dhieb@focus-corporation.com"}, {"email_id":"mariem.jallouli@focus-corporation.com"} ],
+                "to": [{"email_id": ""}, ],
                 "type": "reply"
             }
         })
@@ -215,8 +215,8 @@ class ContractChangeMonitor:
             time.sleep(check_interval)
 
 def main():
-    BASE_URL = "https://service-desk.focus-corporation.com"
-    AUTH_TOKEN = "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"
+    BASE_URL = "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
     monitor = ContractChangeMonitor(AUTH_TOKEN, BASE_URL)
     monitor.monitor_contracts()
