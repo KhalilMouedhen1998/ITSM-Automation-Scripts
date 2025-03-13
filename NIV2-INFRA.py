@@ -9,16 +9,15 @@ from datetime import datetime
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Configuration de l'API
-BASE_URL = "https://10.10.30.75/api/v3/requests"
-HEADERS = {"authtoken": "0C865686-02A7-45EE-B13A-8C22A1066429"}
+BASE_URL = "/api/v3/requests"
+HEADERS = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 # Chemins des fichiers
 COMPETENCE_MATRIX_PATH = r"matrice_categories_INFRA.xlsx"
 TICKET_ASSIGNMENTS_PATH = r"Procédure d'affectation des tickets 2025.xlsx"
 
 # Noms des techniciens
-TECH_NAMES = ['Catégorie', 'Sous-catégorie', 'Oussama Rouis', 'Mohamed Ridha Kaanich', 
-              'Hamdi Meriah', 'Alaa Eddine Majdoub', 'Mahmoud Hermi', 'Oussema Guizani']
+TECH_NAMES = ['Catégorie', 'Sous-catégorie', '', '', '', '', '', '']
 
 def load_competence_matrix():
     """Charger la matrice de compétences"""
@@ -85,12 +84,12 @@ def count_tickets_per_technician(ticket_df):
     ticket_counts = {tech: 0 for tech in tech_columns}
     
     position_mapping = {
-        0: 'Oussama Rouis',
-        1: 'Mohamed Ridha Kaanich',
-        2: 'Hamdi Meriah',
-        3: 'Alaa Eddine Majdoub',
-        4: 'Mahmoud Hermi',
-        5: 'Oussema Guizani'
+        0: '',
+        1: '',
+        2: '',
+        3: '',
+        4: '',
+        5: ''
     }
     
     for index, row in ticket_df.iterrows():
