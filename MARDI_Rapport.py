@@ -4,8 +4,8 @@ from collections import defaultdict
 
 # IDs de tickets à interroger (de 500 à 700)
 ticket_ids = [639, 641,642,656,671,676,677,682,683,692,694,695,697,698,699]
-url_template = "https://service-desk.focus-corporation.com/api/v3/changes/{}"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+url_template = "/api/v3/changes/{}"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 # Dictionnaires pour stocker les utilisateurs par statut et par ID de ticket
 reviewers_by_status_and_ticket = defaultdict(lambda: defaultdict(list))
