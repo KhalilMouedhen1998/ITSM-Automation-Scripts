@@ -3,8 +3,8 @@ import pandas as pd
 import subprocess  # Import the subprocess module
 
 # API URL and headers
-base_url = "https://192.168.10.1/api/v3/contracts"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+base_url = "/api/v3/contracts"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 # Initial parameters to get all contracts
 row_count = 100  # Adjust this value if API allows a higher limit
