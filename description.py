@@ -5,7 +5,7 @@ import json
 import google.generativeai as genai
 
 # Configurer l'API de Google Generative AI
-api_key = "AIzaSyBQRU66uEvVQMMYvI4c8bm0P7-T9zaID4o"
+api_key = ""
 os.environ["API_KEY"] = api_key
 genai.configure(api_key=os.environ["API_KEY"])
 
@@ -117,8 +117,8 @@ def update_request(api_url, headers, request_id, variables):
 
 # Script principal pour récupérer les demandes et les traiter
 def main():
-    requests_url = "https://192.168.10.1/api/v3/requests"
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    requests_url = "/api/v3/requests"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     input_data = '{"list_info": {"row_count": 100, "start_index": 1}}'
     params = {"input_data": input_data}
 
@@ -139,7 +139,7 @@ def main():
                     continue
 
                 # URL de l'API pour récupérer les tâches pour cette demande
-                tasks_url = f"https://192.168.10.1/api/v3/requests/{request_id}/tasks"
+                tasks_url = f"/api/v3/requests/{request_id}/tasks"
                 tasks_response = requests.get(tasks_url, headers=headers, verify=False)
 
                 if tasks_response.status_code == 200:
@@ -154,7 +154,7 @@ def main():
                                 print(f"Tâche trouvée : {task['template']['name']} (ID : {task_id})")
 
                                 # URL pour récupérer les détails de cette tâche
-                                task_details_url = f"https://192.168.10.1/api/v3/requests/{request_id}/tasks/{task_id}"
+                                task_details_url = f"/api/v3/requests/{request_id}/tasks/{task_id}"
                                 task_details_response = requests.get(task_details_url, headers=headers, verify=False)
 
                                 if task_details_response.status_code == 200:
@@ -169,7 +169,7 @@ def main():
                                         variables = process_task_description(cleaned_description)
 
                                         # Préparer et envoyer la mise à jour
-                                        update_request("https://192.168.10.1/api/v3", headers, request_id, variables)
+                                        update_request("/api/v3", headers, request_id, variables)
 
                                         # Log de la demande traitée
                                         log_processed_request(request_id)
