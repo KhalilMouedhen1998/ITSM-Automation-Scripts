@@ -8,10 +8,10 @@ file_path = "Transport.xlsx"
 data = pd.read_excel(file_path)
 
 # URL et headers de l'API
-request_url_template = "https://service-desk.focus-corporation.com/api/v3/requests/{request_id}/worklogs"
-change_url_template = "https://service-desk.focus-corporation.com/api/v3/changes/{change_id}/worklogs"
+request_url_template = "/api/v3/requests/{request_id}/worklogs"
+change_url_template = "/api/v3/changes/{change_id}/worklogs"
 headers = {
-    "authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE",
+    "authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "accept": "application/vnd.manageengine.sdp.v3+json"
 }
 
