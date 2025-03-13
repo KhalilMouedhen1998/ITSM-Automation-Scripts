@@ -3,8 +3,8 @@ import pandas as pd
 
 # Function to get all requests and their details with pagination
 def fetch_requests():
-    url = "https://192.168.10.1/api/v3/requests"
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    url = "/api/v3/requests"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
     all_requests = []
     page = 1
@@ -33,8 +33,8 @@ def fetch_requests():
 
 # Function to get details of a specific request
 def fetch_request_details(request_id):
-    url = f"https://192.168.10.1/api/v3/requests/{request_id}"
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    url = f"/api/v3/requests/{request_id}"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     response = requests.get(url, headers=headers, verify=False)
 
     if response.status_code == 200:
@@ -55,8 +55,8 @@ def load_contracts_info(file_path):
 
 # Function to update request with the contract name
 def update_request(request_id, contract_name):
-    url = f"https://192.168.10.1/api/v3/requests/{request_id}"
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    url = f"/api/v3/requests/{request_id}"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     input_data = f'''{{
         "request": {{
             "udf_fields": {{
