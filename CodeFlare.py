@@ -2,12 +2,12 @@ import requests
 import json
 
 # URL pour l'API des demandes de tickets
-url = "https://192.168.10.1/api/v3/requests/{request_id}"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+url = "/api/v3/requests/{request_id}"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 # URL de l'API des assets pour récupérer l'ID de l'asset par nom
-assets_url = "https://192.168.10.1/api/v3/assets"
-assets_headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+assets_url = "/api/v3/assets"
+assets_headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 input_data = '''{
     "list_info": {
@@ -62,8 +62,8 @@ def get_asset_id_by_name(asset_name):
 
 # Fonction pour mettre à jour le champ udf_sline_11402 de l'asset
 def update_asset_udf(asset_id, udf_value):
-    update_url = f"https://192.168.10.1/api/v3/assets/{asset_id}"
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    update_url = f"/api/v3/assets/{asset_id}"
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     input_data = {
         "asset": {
             "udf_fields": {
@@ -79,7 +79,7 @@ def update_asset_udf(asset_id, udf_value):
         print(f"Erreur lors de la mise à jour de l'asset ID {asset_id}. Code HTTP: {response.status_code}")
 
 # Récupération des demandes de tickets
-response = requests.get("https://192.168.10.1/api/v3/requests", headers=headers, params=params, verify=False)
+response = requests.get("/api/v3/requests", headers=headers, params=params, verify=False)
 
 # Vérification du succès de la requête
 if response.status_code == 200:
