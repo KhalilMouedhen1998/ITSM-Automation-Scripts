@@ -12,8 +12,8 @@ def check_assistance_limits(file_path, sheet_name):
         print(f"Erreur lecture fichier Excel : {e}")
         return []
 
-    url = "https://service-desk.focus-corporation.com/api/v3/requests/10972/notifications"
-    headers = {"authtoken":"906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    url = "/api/v3/requests/10972/notifications"
+    headers = {"authtoken":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
     contrats_limite = []
 
@@ -31,10 +31,10 @@ def check_assistance_limits(file_path, sheet_name):
         "description": "Les Hommes/Jours du contrat %s ont atteint leur limite.",
         "to": [
             {
-                "email_id": "khalil.mouadhen@focus-corporation.com"
+                "email_id": ""
             },
             {
-                "email_id": "medhoussein.sayah@focus-corporation.com"
+                "email_id": ""
             }
 
         ],
