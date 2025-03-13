@@ -4,10 +4,10 @@ import warnings
 # Ignorer les avertissements de sécurité pour des fins de test uniquement
 warnings.simplefilter('ignore')
 
-url_requests = "https://service-desk.focus-corporation.com/api/v3/requests"
-url_attachments = "https://service-desk.focus-corporation.com/api/v3/requests/{ticket_id}/attachments"
-url_update_udf = "https://service-desk.focus-corporation.com/api/v3/requests/{request_id}"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+url_requests = "/api/v3/requests"
+url_attachments = "/api/v3/requests/{ticket_id}/attachments"
+url_update_udf = "/api/v3/requests/{request_id}"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 # Fonction pour mettre à jour le champ UDF
 def update_udf(request_id, subject, value):
