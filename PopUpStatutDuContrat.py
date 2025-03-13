@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Fonction pour récupérer les contrats
 def get_contracts(headers):
-    url = "https://service-desk.focus-corporation.com/api/v3/contracts"
+    url = "/api/v3/contracts"
     row_count = 10  # Nombre de contrats par requête
     start_index = 0
     contract_details = []
@@ -58,7 +58,7 @@ def get_contracts(headers):
 
 # Fonction principale pour récupérer les demandes
 def get_requests(headers):
-    url = "https://service-desk.focus-corporation.com/api/v3/requests"
+    url = "/api/v3/requests"
     row_count = 100  # Nombre de demandes par requête
     max_pages = 5    # Nombre maximum de pages à récupérer
     all_requests = []
@@ -95,7 +95,7 @@ def get_requests(headers):
 
 # Fonction pour mettre à jour le statut du contrat dans la demande
 def update_request_status(request_id, statut, headers):
-    url = f"https://service-desk.focus-corporation.com/api/v3/requests/{request_id}"
+    url = f"/api/v3/requests/{request_id}"
     input_data = json.dumps({
         "request": {
             "udf_fields": {
@@ -109,7 +109,7 @@ def update_request_status(request_id, statut, headers):
 
 # Main
 if __name__ == "__main__":
-    headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+    headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
     # Récupérer les contrats
     contract_details = get_contracts(headers)
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     # Traiter chaque demande pour obtenir les détails
     for request in all_requests:
         request_id = request.get('id')
-        url_request_detail = f"https://service-desk.focus-corporation.com/api/v3/requests/{request_id}"
+        url_request_detail = f"/api/v3/requests/{request_id}"
         
         response_detail = requests.get(url_request_detail, headers=headers, verify=False)
         
