@@ -5,9 +5,9 @@ import os
 from datetime import datetime, timedelta
 
 # Configuration API
-url_get = "https://service-desk.focus-corporation.com/api/v3/requests"
-url_edit = "https://service-desk.focus-corporation.com/api/v3/requests/{request_id}"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+url_get = "/api/v3/requests"
+url_edit = "/api/v3/requests/{request_id}"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 verify_ssl = False
 
 # Fichier de suivi des tickets traités
