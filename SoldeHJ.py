@@ -49,9 +49,9 @@ def read_and_process_file(filename):
 
 def update_ticket(ticket_id, total_hj):
     """Envoie une requête PUT à l'API pour mettre à jour le ticket"""
-    url = f"https://192.168.10.1/api/v3/requests/{ticket_id}"
+    url = f"/api/v3/requests/{ticket_id}"
     headers = {
-        "authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"
+        "authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     }
 
     # Format JSON correct
