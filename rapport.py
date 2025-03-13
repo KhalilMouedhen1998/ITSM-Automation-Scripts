@@ -4,8 +4,8 @@ from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
 # API de base
-base_url = "https://192.168.10.1/api/v3/requests"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+base_url = "/api/v3/requests"
+headers = {"authtoken": ""}
 
 # Liste des templates ciblés
 target_templates = [
