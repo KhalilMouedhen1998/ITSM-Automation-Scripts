@@ -3,8 +3,8 @@ import json
 from datetime import datetime, timedelta
 
 # Configuration de l'API pour récupérer les contrats
-url_contracts = "https://service-desk.focus-corporation.com/api/v3/contracts"
-headers = {"authtoken": "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"}
+url_contracts = "/api/v3/contracts"
+headers = {"authtoken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 row_count = 10  # Nombre de contrats par requête
 start_index = 0
@@ -61,7 +61,7 @@ while True:
 # Récupération des détails de chaque contrat actif à partir de leurs IDs
 active_contract_details = []
 for contract_id in contract_ids:
-    url_detail = f"https://service-desk.focus-corporation.com/api/v3/contracts/{contract_id}"
+    url_detail = f"/api/v3/contracts/{contract_id}"
     
     try:
         response = requests.get(url_detail, headers=headers, verify=False)
@@ -118,19 +118,19 @@ for contract_id in contract_ids:
             if verif == "oui":
                 contract_name = details.get('name', 'Nom non spécifié')
                 print(contract_name,"piw");
-                url = f"https://service-desk.focus-corporation.com/api/v3/requests/10972/notifications"
+                url = f"/api/v3/requests/10972/notifications"
                 input_data = {
                     "notification": {
                         "subject": "Rappel – Date de Réception Définitive",
                         "description": f"Bonjour,<br><br>Nous vous informons que la signature du procès-verbal de réception provisoire a eu lieu le {udf_date_9935} et que la date de réception définitive pour le contrat {contract_name} est prévue à la date du {udf_date_9936}.<br><br> Nous vous remercions de bien vouloir signer le procès verbal de réception définitive dans les délais souhaités et faire parvenir une copie au service logistique et l'équipe support.<br><br>Cordialement,<br>Support FOCUS",
                         "to": [
-                            {"email_id": "karim.khalfaoui@focus-corporation.com"},
-                            {"email_id": "mourad.belkhodja@focus-corporation.com"},
-                            {"email_id": "mourad.ben-nasr@focus-corporation.com"},
-                            {"email_id": "medhoussein.sayah@focus-corporation.com"}
+                            {"email_id": ""},
+                            {"email_id": ""},
+                            {"email_id": ""},
+                            {"email_id": ""}
                         ],
                         "cc": [
-                            {"email_id": "khalil.mouadhen@focus-corporation.com"},
+                            {"email_id": ""},
                             
                         ],
                         "type": "reply"
