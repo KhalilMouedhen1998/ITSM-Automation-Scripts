@@ -9,8 +9,8 @@ from collections import defaultdict
 warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 
 # Configuration
-base_url = "https://192.168.10.1/api/v3/requests"
-auth_token = "906B26D6-70E5-4B71-BAF8-DCD21143B0EE"
+base_url = "/api/v3/requests"
+auth_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 headers = {"authtoken": auth_token}
 verify_ssl = False
 processed_requests_file = "processed_requests.txt"
